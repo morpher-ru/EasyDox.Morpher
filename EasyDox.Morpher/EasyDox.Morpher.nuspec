@@ -9,6 +9,10 @@
         <description>Provides Russian declension and number spelling functions for EasyDox.</description>
         <projectUrl>https://github.com/morpher-ru/EasyDox.Morpher</projectUrl>
         <licenseUrl>https://github.com/morpher-ru/EasyDox.Morpher/blob/master/LICENSE</licenseUrl>
+        <dependencies>
+          <dependency id="EasyDox" version="[1,2)" />
+          <dependency id="Morpher.API" version="[1,2)" />
+        </dependencies>
     </metadata>
     <files>
         <file src="bin\Release\EasyDox.Morpher.xml" target="lib\EasyDox.Morpher.xml" />
