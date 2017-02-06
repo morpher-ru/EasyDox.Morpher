@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>EasyDox.Morpher</id>
+        <version>1.0.0</version>
+        <title>EasyDox.Morpher</title>
+        <authors>Sergey Slepov</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Provides Russian declension and number spelling functions for EasyDox.</description>
+        <projectUrl>https://github.com/morpher-ru/EasyDox.Morpher</projectUrl>
+        <licenseUrl>https://github.com/morpher-ru/EasyDox.Morpher/blob/master/LICENSE</licenseUrl>
+    </metadata>
+    <files>
+        <file src="bin\Release\EasyDox.Morpher.xml" target="lib\EasyDox.Morpher.xml" />
+        <file src="bin\Release\EasyDox.Morpher.dll" target="lib\EasyDox.Morpher.dll" />
+    </files>
+</package>
