@@ -26,18 +26,12 @@ namespace EasyDox
         /// <summary>
         /// 
         /// </summary>
-        public Dictionary <string, Delegate> Functions
+        public Dictionary <string, Delegate> Functions => new Dictionary <string, Delegate>
         {
-            get
-            {
-                return new Dictionary <string, Delegate>
-                           {
-                               {"родительный", new Func<string, string>(Родительный)},
-                               {"цифрами и прописью", new Func<string, string> (Пропись)},
-                               {"фамилия и. о.", new Func<string, string> (ФамилияИнициалы)},
-                           };
-            }
-        }
+            {"родительный", new Func<string, string>(Родительный)},
+            {"цифрами и прописью", new Func<string, string> (Пропись)},
+            {"фамилия и. о.", new Func<string, string> (ФамилияИнициалы)},
+        };
 
         static string ФамилияИнициалы (string fieldValue)
         {
