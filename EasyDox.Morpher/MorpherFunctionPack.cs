@@ -9,7 +9,7 @@ namespace EasyDox
     /// <summary>
     /// Предоставляет функции склонения по падежам и прописи денежных сумм на русском языке.
     /// </summary>
-    public class MorpherFunctionPack : IFunctionPack
+    public class MorpherFunctionPack
     {
         private readonly IDeclension declension;
         private readonly INumberSpelling numberSpelling;
@@ -23,15 +23,18 @@ namespace EasyDox
             this.numberSpelling = numberSpelling;
         }
 
-        Dictionary <string, FunctionDefinition> IFunctionPack.Functions
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary <string, Delegate> Functions
         {
             get
             {
-                return new Dictionary <string, FunctionDefinition>
+                return new Dictionary <string, Delegate>
                            {
-                               {"родительный", new FunctionDefinition (Родительный)},
-                               {"цифрами и прописью", new FunctionDefinition (Пропись)},
-                               {"фамилия и. о.", new FunctionDefinition (ФамилияИнициалы)},
+                               {"родительный", new Func<string, string>(Родительный)},
+                               {"цифрами и прописью", new Func<string, string> (Пропись)},
+                               {"фамилия и. о.", new Func<string, string> (ФамилияИнициалы)},
                            };
             }
         }

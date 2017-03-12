@@ -35,10 +35,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EasyDox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EasyDox.1.0.13\lib\EasyDox.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Morpher.API, Version=1.0.7.0, Culture=neutral, PublicKeyToken=03702b3c5cdf2afc, processorArchitecture=MSIL">
       <HintPath>..\packages\Morpher.API.1.0.9\lib\net40\Morpher.API.dll</HintPath>
       <Private>True</Private>
