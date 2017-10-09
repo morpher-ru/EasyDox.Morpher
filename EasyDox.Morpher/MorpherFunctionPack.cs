@@ -40,7 +40,7 @@ namespace EasyDox
         {
             if (string.IsNullOrWhiteSpace(fieldValue))
             {
-                throw new ArgumentException(fieldValue);
+                throw new ArgumentException("String is null or white space", nameof(fieldValue));
             }
 
             var parts = fieldValue.Split (" .".ToCharArray (), StringSplitOptions.RemoveEmptyEntries).ToList();
