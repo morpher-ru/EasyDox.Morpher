@@ -6,6 +6,9 @@ using Morpher.Russian;
 
 namespace EasyDox
 {
+    using System.Linq;
+    using System.Text;
+
     /// <summary>
     /// Предоставляет функции склонения по падежам и прописи денежных сумм на русском языке.
     /// </summary>
@@ -35,11 +38,38 @@ namespace EasyDox
 
         static string ФамилияИнициалы (string fieldValue)
         {
-            var parts = fieldValue.Split (" .".ToCharArray (), StringSplitOptions.RemoveEmptyEntries);
+            if (string.IsNullOrWhiteSpace(fieldValue))
+            {
+                throw new ArgumentException(fieldValue);
+            }
 
-            if (parts.Length != 3) throw new Exception ("Ожидалось 3 части ФИО.");
+            var parts = fieldValue.Split (" .".ToCharArray (), StringSplitOptions.RemoveEmptyEntries).ToList();
+            if (parts.Count == 0)
+            {
+                throw new ArgumentException("Нет частей ФИО");
+            }
 
-            return parts [0] + " " + parts [1] [0] + ". " + parts [2] [0] + ".";
+            if (parts[0].ToLowerInvariant() == "ип")
+            {
+                parts.RemoveAt(0);
+            }
+
+            if (parts.Count == 0)
+            {
+                throw new ArgumentException("После удаления ИП нет частей ФИО");
+            }
+
+            StringBuilder fioBuilder = new StringBuilder();
+            fioBuilder.Append(parts[0]);
+            if (parts.Count > 1)
+            {
+                foreach (var part in parts.Skip(1))
+                {
+                    fioBuilder.AppendFormat(" {0}.", part[0]);
+                }
+            }
+
+            return fioBuilder.ToString();
         }
 
         string Родительный (string fieldValue)
