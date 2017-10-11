@@ -36,7 +36,12 @@ namespace EasyDox
             {"фамилия и. о.", new Func<string, string> (ФамилияИнициалы)},
         };
 
-        static string ФамилияИнициалы (string fieldValue)
+        /// <summary>
+        /// Сокращает ФИО до Фамилия И. О.
+        /// </summary>
+        /// <param name="fieldValue">ФИО</param>
+        /// <returns>Фамилия И. О.</returns>
+        public static string ФамилияИнициалы (string fieldValue)
         {
             if (string.IsNullOrWhiteSpace(fieldValue))
             {
