@@ -33,5 +33,8 @@
 
         [Test]
         public void Dot_Test() => Assert.AreEqual("Слепов С.", ФамилияИнициалы("Слепов С. ."));
+
+        [Test]
+        public void DoubleDot_Test() => Assert.AreEqual("Слепов С.", ФамилияИнициалы("Слепов С.."));
     }
 }
